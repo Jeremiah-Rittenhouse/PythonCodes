@@ -1,0 +1,63 @@
+\multirow{3}{*}{01} & 01/20 &  M &         - & Martin Luther King Jr. Holiday \\ 
+                    & 01/22 &  W &   1.0-2.3 & Introduction, examples, definitions, mobility \\ 
+                    & 01/24 &  F &  2.3-2.13 & Mobility, kinematic inversion, design considerations, 4-bar introduction \\ 
+\midrule 
+\multirow{3}{*}{02} & 01/27 &  M & 2.13, 3.3, 4.11-4.13 & 4-bar classification, fundamental angles, range of motion \\ 
+                    & 01/29 &  W &   4.0-4.4 & Position analysis terminology, loop closure for a 4-bar linkage \\ 
+                    & 01/31 &  F &     4.4-9 & Loop closure of 4 bar linkages, slider cranks, and multiple loops \\ 
+\midrule 
+\multirow{3}{*}{03} & 02/03 &  M &  4.9-4.10 & Loop closure for multiple loops, locating coupler points \\ 
+                    & 02/05 &  W &  4.0-4.10 & Catch up time/more loop closure and locating coupler points \\ 
+                    & 02/07 &  F &      4.14 & Loop closure numerical solution \\ 
+\midrule 
+\multirow{3}{*}{04} & 02/10 &  M &   3.0-3.2 & Introduction to synthesis (design), function, path, and motion generation \\ 
+                    & 02/12 &  W &   3.0-3.6 & More synthesis, coupler curves for synthesis \\ 
+                    & 02/14 &  F & \textbf{EXAM 1} & Covers material from \textbf{chapters 1-4} \\ 
+\midrule 
+\multirow{3}{*}{05} & 02/17 &  M &       3.4 & Graphical motion generation (position synthesis) \\ 
+                    & 02/19 &  W &   6.0-6.9 & Velocity, loop closure derivatives, velocity difference, coupler velocity \\ 
+                    & 02/21 &  F &   7.0-7.6 & Acceleration, acceleration difference, acceleration of a coupler point \\ 
+\midrule 
+\multirow{3}{*}{06} & 02/24 &  M &   6.0-7.6 & Catch up time/more velocity and acceleration \\ 
+                    & 02/26 &  W &   6.3-6.4 & Instant centers of velocity \\ 
+                    & 02/28 &  F &   6.3-6.4 & More instant centers, velocity analysis with instant centers \\ 
+\midrule 
+\multirow{3}{*}{07} & 03/03 &  M & 10.0-10.8 & Force analysis, dynamics review \\ 
+                    & 03/05 &  W & 10.0-10.8 & Catch up time/more dynamics review \\ 
+                    & 03/07 &  F & 11.0-11.11 & Force analysis basics, ground reaction forces and moments \\ 
+\midrule 
+\multirow{3}{*}{08} & 03/10 &  M & 11.1-11.7 & Force analysis programming \\ 
+                    & 03/12 &  W & \textbf{EXAM 2} & Covers material from \textbf{chapters 6-7 and 10-11} \\ 
+                    & 03/14 &  F &         - & Spring recess \\ 
+\midrule 
+\multirow{3}{*}{09} & 03/17 &  M &      11.4 & More force analysis programming, 4-bar example \\ 
+                    & 03/19 &  W &      11.5 & More force analysis programming, slider crank example \\ 
+                    & 03/21 &  F &   8.0-8.2 & Cams introduction, SVAJ diagrams \\ 
+\midrule 
+Break               &       &   &         - & Spring break \\ 
+ \midrule 
+\multirow{3}{*}{10} & 03/31 &  M &   8.2-8.3 & SVAJ diagrams, fundamental law of cam design \\ 
+                    & 04/02 &  W &   8.3-8.5 & Predefined cam motions \\ 
+                    & 04/04 &  F &   8.3-8.6 & Polynomial cam motion, cam profile \\ 
+\midrule 
+\multirow{3}{*}{11} & 04/07 &  M &   8.0-8.7 & Catch up time/more cam profile and cam design considerations \\ 
+                    & 04/09 &  W &   9.0-9.6 & Gear trains, gear profile background \\ 
+                    & 04/11 &  F & \textbf{EXAM 3} & Covers material from \textbf{chapters 8 and 11} \\ 
+\midrule 
+\multirow{3}{*}{12} & 04/14 &  M &       9.7 & Simple gear trains \\ 
+                    & 04/16 &  W &   9.7-9.8 & Compound gear trains \\ 
+                    & 04/18 &  F &   9.7-9.9 & Planetary gear trains \\ 
+\midrule 
+\multirow{3}{*}{13} & 04/21 &  M &   9.7-9.9 & Catch up time/more simple, compound, and planetary gear trains \\ 
+                    & 04/23 &  W & 9.11-9.12 & Transmissions and differentials \\ 
+                    & 04/25 &  F & 12.0-12.1 & Balancing introduction, static balancing of shafts \\ 
+\midrule 
+\multirow{3}{*}{14} & 04/28 &  M & 12.1-12.2 & Dynamic balancing of shafts \\ 
+                    & 04/30 &  W & 12.3-12.6 & Balancing linkages, effect of balancing on ground reactions \\ 
+                    & 05/02 &  F & 12.0-12.7 & Measuring and correcting imbalance, vibrations and resonance problems \\ 
+\midrule 
+\multirow{3}{*}{15} & 05/05 &  M & 12.0-12.7 & Catch up time/more balancing and vibrations \\ 
+                    & 05/07 &  W & 2.19, 11.11 & Motors and flywheels, design considerations \\ 
+                    & 05/09 &  F & \textbf{EXAM 4} & Covers material from \textbf{chapters 9 and 12} \\ 
+\midrule 
+                16  & 05/15 & Th & \textbf{FINAL} & Final exam, 10:00am-12:00pm, location TBA (to be announced) \\

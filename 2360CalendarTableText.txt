@@ -1,0 +1,63 @@
+\multirow{3}{*}{01} & 01/20 &  M &         - & Martin Luther King Jr. Holiday \\ 
+                    & 01/22 &  W &      12.1 & Introduction \\ 
+                    & 01/24 &  F & 12.2-12.3 & Rectilinear kinematics of a particle \\ 
+\midrule 
+\multirow{3}{*}{02} & 01/27 &  M & 12.4-12.6 & Curvilinear motion in rectangular coordinates \\ 
+                    & 01/29 &  W &      12.7 & Curvilinear motion in normal and tangential coordinates \\ 
+                    & 01/31 &  F &      12.8 & Curvilinear motion in cylindrical coordinates \\ 
+\midrule 
+\multirow{3}{*}{03} & 02/03 &  M &      12.9 & Absolute dependent motion of two particles \\ 
+                    & 02/05 &  W &     12.10 & Relative motion of two particles using translating axes \\ 
+                    & 02/07 &  F & \textbf{EXAM 1} & Covers material from \textbf{chapter 12} \\ 
+\midrule 
+\multirow{3}{*}{04} & 02/10 &  M & 13.1-13.3 & Newton's laws and equations of motion \\ 
+                    & 02/12 &  W &      13.4 & Equations of motion in rectangular coordinates \\ 
+                    & 02/14 &  F &      13.5 & Equations of motion in normal and tangential coordinates \\ 
+\midrule 
+\multirow{3}{*}{05} & 02/17 &  M & 13.4-13.7 & Catch up time/more equations of motion \\ 
+                    & 02/19 &  W & 14.1-14.2 & Work of a force, principle of work and energy \\ 
+                    & 02/21 &  F & 14.3-14.5 & Power, conservative forces, energy, conservation of energy \\ 
+\midrule 
+\multirow{3}{*}{06} & 02/24 &  M &      14.6 & Conservation of energy \\ 
+                    & 02/26 &  W &      15.1 & Principle of linear impulse and momentum \\ 
+                    & 02/28 &  F & \textbf{EXAM 2} & Covers material from \textbf{chapters 13 and 14} \\ 
+\midrule 
+\multirow{3}{*}{07} & 03/03 &  M & 15.2-15.3 & Linear impulse and momentum, conservation of momentum \\ 
+                    & 03/05 &  W &      15.4 & Impact \\ 
+                    & 03/07 &  F &      15.4 & Catch up time/impact examples \\ 
+\midrule 
+\multirow{3}{*}{08} & 03/10 &  M & 15.5-15.7 & Angular momentum, principle of angular impulse and momentum \\ 
+                    & 03/12 &  W & 16.1-16.3 & Rigid body pure translation and pure rotation \\ 
+                    & 03/14 &  F &         - & Spring recess \\ 
+\midrule 
+\multirow{3}{*}{09} & 03/17 &  M &      16.4 & Absolute motion \\ 
+                    & 03/19 &  W &      16.5 & Relative motion: velocity \\ 
+                    & 03/21 &  F & \textbf{EXAM 3} & Covers material from \textbf{chapter 15} \\ 
+\midrule 
+Break               &       &   &         - & Spring break \\ 
+ \midrule 
+\multirow{3}{*}{10} & 03/31 &  M &      16.6 & Instantaneous center of zero velocity \\ 
+                    & 04/02 &  W &      16.7 & Relative motion: acceleration \\ 
+                    & 04/04 &  F & 17.1-17.2 & Mass moment of inertia, planar kinetic equations of motion \\ 
+\midrule 
+\multirow{3}{*}{11} & 04/07 &  M & 17.3-17.4 & Equations of motion for pure translation and pure rotation \\ 
+                    & 04/09 &  W &      17.5 & Equations of motion for general plane motion \\ 
+                    & 04/11 &  F &      17.5 & Catch up time/general plane motion examples \\ 
+\midrule 
+\multirow{3}{*}{12} & 04/14 &  M & 18.1-18.4 & Planar kinetics of rigid bodies: work and energy \\ 
+                    & 04/16 &  W &      18.5 & Rigid body conservation of energy \\ 
+                    & 04/18 &  F & \textbf{EXAM 4} & Covers material from \textbf{chapters 16 and 17} \\ 
+\midrule 
+\multirow{3}{*}{13} & 04/21 &  M & 19.1-19.4 & Rigid body impulse and momentum \\ 
+                    & 04/23 &  W & 19.1-19.4 & Catch up time/rigid body impulse and momentum examples \\ 
+                    & 04/25 &  F & 20.1-20.3 & Three dimensional rigid body motion \\ 
+\midrule 
+\multirow{3}{*}{14} & 04/28 &  M &      20.4 & Three dimensional relative motion \\ 
+                    & 04/30 &  W &      21.1 & Moments and products of inertia \\ 
+                    & 05/02 &  F & 21.2-21.3 & Three dimensional rigid body momentum and energy \\ 
+\midrule 
+\multirow{3}{*}{15} & 05/05 &  M &      21.4 & Three dimensional rigid body equations of motion \\ 
+                    & 05/07 &  W & 21.1-21.4 & Catch up time/three dimensional dynamics examples \\ 
+                    & 05/09 &  F & \textbf{EXAM 5} & Covers material from \textbf{chapters 18-21} \\ 
+\midrule 
+                16  & 05/15 & Th & \textbf{FINAL} & Final exam, 7:30-9:30am, location TBA (to be announced) \\

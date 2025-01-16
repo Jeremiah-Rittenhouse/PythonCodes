@@ -12,12 +12,20 @@ import numpy as np
 import json
 import os
 
+#%% Control panel.
+
+MWF = True
+TTh = False
+
+coursenumber = "3313"
+
 #%% Functions.
 
 def ReplaceDay(date,datelist):
     # Given a date "##/##" and data, find holidays.
     try:
         test = datelist[date]
+        print("Replacing a day, "+str(datelist[date]))
         return(datelist["Symbol"])
     except KeyError:
         return(date)
@@ -43,6 +51,18 @@ with open(infname) as f:
     #print(data)
 # End with.
 
+#%% Assign weekdays based on MWF and TTH true/false.
+
+if MWF:
+    weekdays = ["Mondays","Wednesdays","Fridays"]
+    weekday_table = ["M","W","F"]
+elif TTh:
+    weekdays = ["Tuesdays","Thursdays"]
+    weekday_table = ["T","Th"]
+else:
+    KeyError("Neither MWF nor TTh were true.")
+# End if else MWF/TTh.
+
 #%% Calculate non-holiday class days.
 
 course_days = []
@@ -50,38 +70,36 @@ course_meetings = []
 
 for i in range(len(data["Sundays"])):
     #week = i+1 # Not sure if I need this, but a reminder to myself.
-    [M,W,F] = [data["Mondays"][i],data["Wednesdays"][i],data["Fridays"][i]]
-    course_days.append([M,W,F]) # Put dates in course days variable.
+    weekdaydata = []
+    coursedaydata = []
+    for j,day in enumerate(weekdays):
+        coursedaydata.append(data[day][i]) # If course_days gets weekdaydata, later modifications to weekdaydata affect course_days.
+        weekdaydata.append(data[day][i])
+    # End for day in weekdays.
+    
+    course_days.append(coursedaydata) # Put dates in course days variable.
     
     # Deal with holidays.
-    M = ReplaceDay(data["Mondays"][i],data["Holidays"])
-    W = ReplaceDay(data["Wednesdays"][i],data["Holidays"])
-    F = ReplaceDay(data["Fridays"][i],data["Holidays"])
+    for j,daydata in enumerate(weekdaydata):
+        weekdaydata[j] = ReplaceDay(data[weekdays[j]][i],data["Holidays"]) # 
+    # End for through weekdaydata.
+    print(weekdaydata)
     
     # Deal with finals week.
     if i == len(data["Sundays"])-1:
-        print("Replacing finals week dates with 'FW's.")
-        [M,W,F] = ["FINWK", "FINWK", "FINWK"]
+        print("Replacing finals week dates with 'FINWK's.")
+        for j,daydata in enumerate(weekdaydata):
+            weekdaydata[j] = "FINWK"
+        # End for daydata in weekdaydata.
+        #[M,W,F] = ["FINWK", "FINWK", "FINWK"]
     # End if.
     
     # Input into course meetings variable.
-    course_meetings.append([M,W,F])
+    course_meetings.append(weekdaydata)
 # End for through semester weeks.
 
-# 5 holidays #num_holidays = course_days.count("H")
-# 43 meetings #num_meetings = sum(1 for week in course_days for day in week if day[0].isdigit())
-
-# num_mtgs_w_FW = num_meetings+1 # Represents number of meetings including final.
-
-#%% Get the number of lectures I have.
-
-#prepped_lectures = []
-
-#for i in range(len(data["2360Lectures"])):
-    #
-# End for.
-
-num_prepped_lectures = sum(1 for lec in data["2360Lectures"] if lec["Topic"] != "NotPrepped")
+#num_prepped_lectures = sum(1 for lec in data[coursenumber+"Lectures"] if lec["Topic"] != "NotPrepped")
+num_prepped_lectures = sum(1 for lec in data[coursenumber+"MWFLectures"] if lec["Topic"] != "NotPrepped")
 
 #%% LaTeX table output.
 
@@ -91,7 +109,6 @@ lec_num = 0 # Lecture number counter.
 ex_num = 0 # Exam number counter.
 
 tab_text = ""
-weekday_table = ["M","W","F"] # Index 0 is M for Monday, corresponds to j below.
 
 for i,week in enumerate(course_days):
     for j,day in enumerate(week):
@@ -115,17 +132,17 @@ for i,week in enumerate(course_days):
         
         # Handle multirow entry for all Mondays except spring break.
         if j == 0: # Monday.
-            rowstr = "\multirow{3}{*}{"+f"{i+SPB_flag:02d}"+"}" # Week.
+            rowstr = "\multirow{"+str(len(weekday_table))+"}{*}{"+f"{i+SPB_flag:02d}"+"}" # Week.
         # End if Monday.
         rowstr += (" & "+day+" & " # Date column
-                   +weekday_table[j]+" & ") # Day column
+                   +"{:>2}".format(weekday_table[j])+" & ") # Day column
         
         # Handle other holidays.
         if course_meetings[i][j] == "HOLID":
             rowstr += ("{:>9}".format("-")+" & " # Section
                        +data["Holidays"][course_days[i][j]]["Name"] # Topic
                        +" \\\\ \n")
-            if j != 2:
+            if j != len(weekday_table)-1:
                 rowstr += " "*19
             else:
                 rowstr += "\midrule \n"
@@ -137,11 +154,12 @@ for i,week in enumerate(course_days):
         # Handle finals week.
         elif course_meetings[i][j] == "FINWK":
             tab_text += ("{:>18}".format("16")+"  & "
-                         +data["2360Final"]["Date"]+" & "
-                         +data["2360Final"]["Day"]+" & "
+                         +data[coursenumber+"Final"]["Date"]+" & "
+                         +data[coursenumber+"Final"]["Day"]+" & "
                          +"\\textbf{FINAL} & "
-                         +"Comprehensive final exam, location "
-                         +data["2360Final"]["Location"]
+                         +"Final exam, "
+                         +data[coursenumber+"Final"]["Time"]
+                         +", location "+data[coursenumber+"Final"]["Location"]
                          +" \\\\")
             break
         else: # Input lectures and exams.
@@ -149,14 +167,14 @@ for i,week in enumerate(course_days):
         
         # Need to handle exams here
         try:
-            thisexam = data["2360Exams"][course_days[i][j]]
+            thisexam = data[coursenumber+"Exams"][course_days[i][j]]
             examstring = "\\textbf{EXAM "+str(thisexam['Number'])+"}"
             print(thisexam)
             rowstr += (examstring
                        +" & "+thisexam["Covers"]
                        +" \\\\ \n")
             print(rowstr)
-            if j != 2:
+            if j != len(weekday_table)-1:
                 rowstr += " "*19
             else:
                 rowstr += "\midrule \n"
@@ -167,13 +185,19 @@ for i,week in enumerate(course_days):
             pass
         
         # Input a lecture.
-        rowstr += ("{:>9}".format(data["2360Lectures"][lec_num]["Sections"])
+        """
+        rowstr += ("{:>9}".format(data[coursenumber+"Lectures"][lec_num]["Sections"])
                    +" & "
-                   +data["2360Lectures"][lec_num]["Topic"])
-        
+                   +data[coursenumber+"Lectures"][lec_num]["Topic"])
+        """
+        rowstr += ("{:>9}".format(data[coursenumber+"MWFLectures"][lec_num]["Sections"])
+                   +" & "
+                   +data[coursenumber+"MWFLectures"][lec_num]["Topic"])
+        #"""
+
         rowstr += " \\\\ \n"
         
-        if j != 2:
+        if j != len(weekday_table)-1:
             rowstr += " "*19
         else:
             rowstr += "\midrule \n"
@@ -185,13 +209,10 @@ for i,week in enumerate(course_days):
 print(tab_text)
 print(lec_num)
 
-#%% Put the results into the data and file.
-"""
-data["rho"] = round(Density,1)
+#%% Put the calendar into a text data file.
+outfname = coursenumber+"CalendarTableText.txt"
 
-data["rho_uncertainty"] = round(uDensity,1)
-
-with open(infname,"w") as f:
-    json.dump(data,f,ensure_ascii=False,indent='\t')
+with open(outfname,"w") as f:
+    f.write(tab_text)
+    #json.dump(data,f,ensure_ascii=False,indent='\t')
 # End with.
-"""
